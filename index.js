@@ -20,6 +20,11 @@ const questions = [
     },
     {
         type: `input`,
+        name: `Usage`,
+        message: `Here is a Video showing on how you can also use this project.`
+    },
+    {
+        type: `input`,
         name: `guidelines`,
         message: `What are the contribution guidelines?`
     },
@@ -59,9 +64,10 @@ const writeToFile = (fileName, data) => {
 const response = await inquirer.prompt(questions);
 const readMeContent = generateMarkdown({
     title: response.project,
-    description: response.description,
     sections: questions.map(question => question.name),
+    description: response.description,
     questions: questions,
+    usage: usage,
     responses: response,
     license: response.license,
     addContact: response.addContact,

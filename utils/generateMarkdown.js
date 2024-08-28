@@ -60,6 +60,7 @@ export function generateQuestionsSection(data) {
 If you have any questions, reach out to me here:
 - Email: ${data.email}
 - GitHub: [${data.github}](https://github.com/${data.github})
+- Contact me: qilotog1@gmail.com or visit [GitHub.com/JoeyVedder](https://github.com/JoeyVedder)
   `;
 }
 
