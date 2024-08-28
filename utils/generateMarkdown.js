@@ -51,6 +51,18 @@ export function generateSections(questions, responses) {
   return allSections;
 }
 
+//Function to generate the Questions  section
+// Function to generate the Questions section
+export function generateQuestionsSection(data) {
+  if (!data.addContact) return '';
+  return `
+## Questions
+If you have any questions, reach out to me here:
+- Email: ${data.email}
+- GitHub: [${data.github}](https://github.com/${data.github})
+  `;
+}
+
 // Function to generate the full markdown for README
 export function generateMarkdown(data) {
   return `# ${data.title}
@@ -64,5 +76,7 @@ ${generateSections(data.questions, data.responses)}
 
 ${renderLicenseSection(data.license)}
 ${renderLicenseBadge(data.license)}
+
+${generateQuestionsSection(data)}
 `;
 }

@@ -16,7 +16,7 @@ const questions = [
     {
         type: `input`,
         name: `installation`,
-        message: `What are the Installation instructions?`
+        message: `What are the installation instructions?`
     },
     {
         type: `input`,
@@ -31,12 +31,12 @@ const questions = [
     {
         type: `input`,
         name: `github`,
-        message: `What is your Github username?`
+        message: `What is your GitHub username?`
     },
     {
         type: `input`,
         name: `email`,
-        message: `What is your Email?`
+        message: `What is your email?`
     },
     {
         type: `list`,
@@ -44,11 +44,17 @@ const questions = [
         message: `What license would you like to use?`,
         choices: [`MIT`, `ISC`, `NCSA`, `LGPL`, `GPL`]
     },
+    {
+        type: `confirm`,
+        name: `addContact`,
+        message: `Would you like to include a "Questions" section with your contact information?`,
+        default: true
+    }
 ];
 
 const writeToFile = (fileName, data) => {
     fs.writeFileSync(fileName, data);
-}
+};
 
 const response = await inquirer.prompt(questions);
 const readMeContent = generateMarkdown({
@@ -58,6 +64,9 @@ const readMeContent = generateMarkdown({
     questions: questions,
     responses: response,
     license: response.license,
+    addContact: response.addContact,
+    github: response.github,
+    email: response.email,
 });
 
 const fileName = `README.md`;
