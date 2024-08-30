@@ -15,7 +15,8 @@ This project will help you and other users generate a professional README withou
 
 ## Installation
 
-Download Node.js before you do anything! When installed that click the "Code" button on the right side and download the .zip file. Once that's downloaded extract everything in the .zip file and then you're ready to go!! --> Here's a quick video if you need help!! https://youtu.be/ilfi0he_heY
+Download Node.js before you do anything! When installed that click the "Code" button on the right side and download the .zip file. Once that's downloaded extract everything in the .zip file and then you're ready to go!! --> Here's a quick video if you need help!! [Click here](https://youtu.be/ilfi0he_heY)
+
 
 ## Usage
 
