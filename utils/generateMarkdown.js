@@ -1,6 +1,3 @@
-
-//Get a video on how to use it 
-
 // Function to return a license badge based on the license passed in
 export function renderLicenseBadge(license) {
   if (!license) return '';
@@ -66,7 +63,7 @@ export function generateSections(questions, responses) {
 
 // Function to generate the Questions section
 export function generateQuestionsSection(data) {
-  if (!data.email || !data.github) return ''; // Check for email and github directly
+  if (!data.email || !data.github) return ''; 
   return `
 ## Questions
 If you have any questions, reach out to me here:
@@ -77,18 +74,18 @@ If you have any questions, reach out to me here:
 
 // Function to generate the full markdown for README
 export function generateMarkdown(data) {
-  // Prepare sections with content flags
+ 
   const sections = [
     { name: 'description', content: data.description },
     { name: 'installation', content: data.responses['installation'] },
     { name: 'usage', content: data.responses['usage'] },
-    { name: 'contributing', content: data.responses['guidelines'] }, // Ensure correct name
-    { name: 'tests', content: data.responses['test'] }, // Ensure correct name
-    { name: 'questions', content: generateQuestionsSection(data) }, // Directly include generated section
+    { name: 'contributing', content: data.responses['guidelines'] }, 
+    { name: 'tests', content: data.responses['test'] }, 
+    { name: 'questions', content: generateQuestionsSection(data) }, 
     { name: 'license', content: renderLicenseSection(data.license) }
   ];
 
-  // Generate markdown
+  
   return `# ${data.title}
   
 ${renderLicenseBadge(data.license)}
