@@ -71,7 +71,7 @@ const readMeContent = generateMarkdown({
     email: response.email,
 });
 
-const fileName = `README.md`;
+const fileName = `./output/README.md`;
 writeToFile(fileName, readMeContent);
 
 console.log('README file generated successfully!');
