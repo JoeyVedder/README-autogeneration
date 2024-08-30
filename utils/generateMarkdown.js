@@ -66,7 +66,7 @@ export function generateSections(questions, responses) {
 
 // Function to generate the Questions section
 export function generateQuestionsSection(data) {
-  if (!data.addContact || !data.email || !data.github) return '';
+  if (!data.email || !data.github) return ''; // Check for email and github directly
   return `
 ## Questions
 If you have any questions, reach out to me here:
@@ -82,9 +82,9 @@ export function generateMarkdown(data) {
     { name: 'description', content: data.description },
     { name: 'installation', content: data.responses['installation'] },
     { name: 'usage', content: data.responses['usage'] },
-    { name: 'contributing', content: data.responses['contributing'] },
-    { name: 'tests', content: data.responses['tests'] },
-    { name: 'questions', content: data.addContact ? generateQuestionsSection(data) : '' },
+    { name: 'contributing', content: data.responses['guidelines'] }, // Ensure correct name
+    { name: 'tests', content: data.responses['test'] }, // Ensure correct name
+    { name: 'questions', content: generateQuestionsSection(data) }, // Directly include generated section
     { name: 'license', content: renderLicenseSection(data.license) }
   ];
 

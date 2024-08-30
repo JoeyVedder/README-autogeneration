@@ -26,7 +26,7 @@ const questions = [
     {
         type: `input`,
         name: `test`,
-        message: `Please provide testing instructions`
+        message: `Please provide testing instructions.`
     },
     {
         type: `input`,
@@ -44,6 +44,11 @@ const questions = [
         message: `What is your email?`
     },
     {
+        type: `input`,
+        name: `github`,
+        message: `What is your GitHub username?`
+    },
+    {
         type: `list`,
         name: `license`,
         message: `What license would you like to use?`,
@@ -58,9 +63,8 @@ const writeToFile = (fileName, data) => {
 const response = await inquirer.prompt(questions);
 const readMeContent = generateMarkdown({
     title: response.project,
-    sections: questions.map(question => question.name),
+    sections: questions.map(question => question.name), // 
     description: response.description,
-    questions: questions,
     responses: response,
     license: response.license,
     github: response.github,

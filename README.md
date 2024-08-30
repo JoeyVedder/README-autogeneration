@@ -6,19 +6,20 @@
 - [Description](#description)
 - [Installation](#installation)
 - [Usage](#usage)
+- [Questions](#questions)
 - [License](#license)
 
 
 ## Description
-This project will help you and other users generate a professional README without the hassle! Just answer a few questions and i'll do all the work for you!
+This project will help you and other users generate a professional README without the hassle! Just answer a few questions and I'll do the work for you!
 
 ## Installation
 
-Download Node.js before anything!! When you installed that click the "Code" button on the right side and download the .zip file. Once that's downloaded extract everything in the .zip file and then you're ready to go! 
+Download Node.js before you do anything! When installed that click the "Code" button on the right side and download the .zip file. Once that's downloaded extract everything in the .zip file and then you're ready to go!!
 
 ## Usage
 
-Go to the directory that holds the files from the .zip file, when you're there type "npm start" and the program will ask you some questions! Answer accordingly you can look in in the output folder and there you will see your beautiful README!!
+Go to the directory that holds the files from the .zip file you downloaded earlier. When you're in that directory type "npm start" and the program will ask you some questions!! Answer the questions accordingly; Once they're all answered you can look in the output folder then you will see your new README!!
 
 
 
@@ -27,3 +28,8 @@ This project is licensed under the MIT.
 
 
 
+## Questions
+If you have any questions, reach out to me here:
+- Email: qilotog1@gmail.com
+- GitHub: [JoeyVedder](https://github.com/JoeyVedder)
+  
