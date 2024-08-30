@@ -1,56 +1,29 @@
-# README generator
-
-## Description
-This project will allow users to get a automated README 
-
+# README
+  
+![License](https://img.shields.io/badge/License-MIT-blue.svg)
 ## Table of Contents
 
-- [Project](#project)
 - [Description](#description)
 - [Installation](#installation)
-- [Guidelines](#guidelines)
-- [Test](#test)
-- [Github](#github)
-- [Email](#email)
+- [Usage](#usage)
 - [License](#license)
-- [AddContact](#addcontact)
 
+
+## Description
+This project will help you and other users generate a professional README without the hassle! Just answer a few questions and i'll do all the work for you!
 
 ## Installation
 
-inquirer
+Download Node.js before anything!! When you installed that click the "Code" button on the right side and download the .zip file. Once that's downloaded extract everything in the .zip file and then you're ready to go! 
 
-## Guidelines
+## Usage
 
-TBA
-
-## Test
-
-TBA
-
-## Github
-
-JoeyVedder
-
-## Email
-
-qilotog1@gmail.com
-
-## AddContact
-
-true
+Go to the directory that holds the files from the .zip file, when you're there type "npm start" and the program will ask you some questions! Answer accordingly you can look in in the output folder and there you will see your beautiful README!!
 
 
 
 ## License
 This project is licensed under the MIT.
 
-![License](https://img.shields.io/badge/License-MIT-blue.svg)
 
 
-## Questions
-If you have any questions, reach out to me here:
-- Email: qilotog1@gmail.com
-- GitHub: [JoeyVedder](https://github.com/JoeyVedder)
-- Contact me: qilotog1@gmail.com or visit [GitHub.com/JoeyVedder](https://github.com/JoeyVedder)
-  

@@ -1,3 +1,6 @@
+
+//Get a video on how to use it 
+
 // Function to return a license badge based on the license passed in
 export function renderLicenseBadge(license) {
   if (!license) return '';
@@ -29,11 +32,18 @@ export function renderLicenseSection(license) {
   return `## License\nThis project is licensed under the ${license}.\n`;
 }
 
+
+function shouldIncludeSection(content) {
+  return content && content.trim().length > 0;
+}
+
 // Function to generate the table of contents
 export function genTableOfContents(sections) {
   let tableOfContents = '## Table of Contents\n\n';
   for (let section of sections) {
-      tableOfContents += `- [${section.charAt(0).toUpperCase() + section.slice(1)}](#${section.toLowerCase()})\n`;
+    if (shouldIncludeSection(section.content)) {
+      tableOfContents += `- [${section.name.charAt(0).toUpperCase() + section.name.slice(1)}](#${section.name.toLowerCase()})\n`;
+    }
   }
   return tableOfContents;
 }
@@ -42,42 +52,56 @@ export function genTableOfContents(sections) {
 export function generateSections(questions, responses) {
   let allSections = '';
   for (const question of questions) {
-      if (question.name === 'project' || question.name === 'description' || question.name === 'license') {
-          continue;
-      }
+    if (question.name === 'project' || question.name === 'description' || question.name === 'license') {
+      continue;
+    }
+    const sectionContent = responses[question.name];
+    if (shouldIncludeSection(sectionContent)) {
       allSections += `## ${question.name.charAt(0).toUpperCase() + question.name.slice(1)}\n\n`;
-      allSections += responses[question.name] + '\n\n';
+      allSections += sectionContent + '\n\n';
+    }
   }
   return allSections;
 }
 
-//Function to generate the Questions  section
 // Function to generate the Questions section
 export function generateQuestionsSection(data) {
-  if (!data.addContact) return '';
+  if (!data.addContact || !data.email || !data.github) return '';
   return `
 ## Questions
 If you have any questions, reach out to me here:
 - Email: ${data.email}
 - GitHub: [${data.github}](https://github.com/${data.github})
-- Contact me: qilotog1@gmail.com or visit [GitHub.com/JoeyVedder](https://github.com/JoeyVedder)
   `;
 }
 
 // Function to generate the full markdown for README
 export function generateMarkdown(data) {
+  // Prepare sections with content flags
+  const sections = [
+    { name: 'description', content: data.description },
+    { name: 'installation', content: data.responses['installation'] },
+    { name: 'usage', content: data.responses['usage'] },
+    { name: 'contributing', content: data.responses['contributing'] },
+    { name: 'tests', content: data.responses['tests'] },
+    { name: 'questions', content: data.addContact ? generateQuestionsSection(data) : '' },
+    { name: 'license', content: renderLicenseSection(data.license) }
+  ];
+
+  // Generate markdown
   return `# ${data.title}
+  
+${renderLicenseBadge(data.license)}
+${genTableOfContents(sections)}
 
 ## Description
 ${data.description}
 
-${genTableOfContents(data.sections)}
-
-${generateSections(data.questions, data.responses)}
+${generateSections(sections, data.responses)}
 
 ${renderLicenseSection(data.license)}
-${renderLicenseBadge(data.license)}
 
 ${generateQuestionsSection(data)}
 `;
 }
+

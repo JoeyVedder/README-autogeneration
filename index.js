@@ -20,23 +20,23 @@ const questions = [
     },
     {
         type: `input`,
-        name: `Usage`,
-        message: `Here is a Video showing on how you can also use this project.`
-    },
-    {
-        type: `input`,
         name: `guidelines`,
         message: `What are the contribution guidelines?`
     },
     {
         type: `input`,
         name: `test`,
-        message: `Please provide test instructions.`
+        message: `Please provide testing instructions`
     },
     {
         type: `input`,
         name: `github`,
         message: `What is your GitHub username?`
+    },
+    {
+        type: 'input',
+        name: 'usage',
+        message: 'Tell us how to use the program.'
     },
     {
         type: `input`,
@@ -49,12 +49,6 @@ const questions = [
         message: `What license would you like to use?`,
         choices: [`MIT`, `ISC`, `NCSA`, `LGPL`, `GPL`]
     },
-    {
-        type: `confirm`,
-        name: `addContact`,
-        message: `Would you like to include a "Questions" section with your contact information?`,
-        default: true
-    }
 ];
 
 const writeToFile = (fileName, data) => {
@@ -67,10 +61,8 @@ const readMeContent = generateMarkdown({
     sections: questions.map(question => question.name),
     description: response.description,
     questions: questions,
-    usage: usage,
     responses: response,
     license: response.license,
-    addContact: response.addContact,
     github: response.github,
     email: response.email,
 });
