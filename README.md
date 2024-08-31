@@ -25,7 +25,8 @@ Go to the directory that holds the files from the .zip file you downloaded earli
 
 
 ## License
-This project is licensed under the MIT.
+This project is licensed under the [MIT](https://github.com/git/git-scm.com/blob/main/MIT-LICENSE.txt)
+.
 
 
 
